@@ -19,9 +19,10 @@ def input_valid_integer(prompt):
         user_input = input(prompt)
         try:
             user_input = int(user_input)
-            if (user_input < 1): raise Exception("Sorry, no numbers below zero")
+            if user_input < 1:
+                raise ValueError
             return user_input
-        except:
+        except ValueError:
             print("Does not compute. Try again.")
 
 def main():
