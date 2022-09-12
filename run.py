@@ -6,17 +6,13 @@ def get_birthdays(size):
     '''Returns a list of birthday numbers, 1-365'''
     bdays = []
     for _ in range(size):
-        bday = randint(1,366)
+        bday = randint(1,365)
         bdays.append(bday)
     return bdays
 
 def check_match(bdays):
-    '''Here we do the actual check to see if we have matching birthdays'''
-    for _ in bdays:
-        bday = bdays.pop(0)
-        if bday in bdays:
-            return True
-    return False
+    '''Check if birthday list equals length of unique-birthdays list (set)'''
+    return len(bdays) != len(set(bdays))
 
 def validate_number(num):
     '''Is it a valid number?'''
