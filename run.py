@@ -19,11 +19,12 @@ def input_valid_integer(prompt):
         user_input = input(prompt)
         try:
             user_input = int(user_input)
-            if user_input < 1:
-                raise ValueError
+            assert user_input > 0
             return user_input
         except ValueError:
             print("Does not compute. Try again.")
+        except AssertionError:
+            print("Value has to be greater than 0.")
 
 def main():
     '''Main program'''
